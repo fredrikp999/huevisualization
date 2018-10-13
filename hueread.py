@@ -5,6 +5,7 @@ import sys
 
 # Playing around with Philips Hur Lights
 # And sinking some data to OpenTSDB for visualization in Grafana etc.
+# This is the initial "all in one go version". Not to be used once split up into modules
 
 class HueLights:
 	def __init__(self):
