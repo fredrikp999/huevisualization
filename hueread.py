@@ -3,6 +3,9 @@ import json
 import time
 import sys
 
+# Playing around with Philips Hur Lights
+# And sinking some data to OpenTSDB for visualization in Grafana etc.
+
 class HueLights:
 	def __init__(self):
 	# Constructor. Get status for all lights and store in self.lightData for further use
@@ -216,7 +219,7 @@ def main(argv):
 			focusSensor = 13
 			sensors = HueSensors()
 			tsdb = TSDBfixer()
-			for i in range (1,10000):
+			for i in range (1,100000):
 				sensors.readAllSensors()
 				lightlevel = sensors.getLightlevel(focusSensor)
 				theBody = tsdb.createTSDBbody(time.time(),"DS.Kitchen.light",lightlevel)
@@ -224,6 +227,7 @@ def main(argv):
 				print (theBody)
 				time.sleep(10)
 				print("Sleeping 10s")
+                                
 	
 		else:
 			print("Sorry, no such action")
