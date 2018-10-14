@@ -47,13 +47,17 @@ def main(argv):
 			print("Use: doitOnce, test1, test2, doitLoop or SensorLoop")
 
 	else:
+		print("No args so do it a while")
+		sensorLoop()	
+
+
+def printerguy():
 		lights = hueif.HueLights()
 		printer = tsdbif.LightStatusPrinter(lights)
 		for i in range(1,7):
         		focusLightNo = i
         		print ("-------------------")
-        		printer.printOneLight(focusLightNo)
-
+        		printer.printOneLight(focusLightNo)	
 
 def sensorLoop():
 	focusSensor = 13
@@ -67,6 +71,7 @@ def sensorLoop():
 		print (theBody)
 		time.sleep(10)
 		print("Sleeping 10s")
+
 
 if __name__ == "__main__":
 	main(sys.argv[1:])

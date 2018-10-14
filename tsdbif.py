@@ -63,7 +63,7 @@ class LightStatusPusher:
 class TSDBfixer:
 	def __init__(self):
 		#self.lights = lightsObj
-		self.tsdbUrl = 'http://localhost:4242/api/put'	
+		self.tsdbUrl = 'http://127.0.0.1:4242/api/put'	
             
 	def createTSDBbody(self,theTime,theMetric,theValue):
 		putdata = {
